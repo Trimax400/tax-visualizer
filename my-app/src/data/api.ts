@@ -1,0 +1,1 @@
+export const API_BASE_URL = process.env.NEXT_PUBLIC_API_ENTRYPOINT || 'https://taxes.trimax400.com';

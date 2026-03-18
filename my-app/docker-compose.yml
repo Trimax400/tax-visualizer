@@ -1,0 +1,21 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - NEXT_PUBLIC_API_ENTRYPOINT=${NEXT_PUBLIC_API_ENTRYPOINT}
+    container_name: taxes-frontend
+    restart: unless-stopped
+    env_file: .env
+    networks:
+      - web-gateway
+
+networks:
+  web-gateway:
+    external: true
+
+volumes:
+  caddy_data:
+  caddy_config:
+  database_data:

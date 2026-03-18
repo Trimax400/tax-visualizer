@@ -1,0 +1,17 @@
+api_platform:
+    title: Hello API Platform
+    version: 1.0.0
+    # Mercure integration, remove if unwanted
+    mercure:
+        include_type: true
+    # Good defaults for REST APIs
+    defaults:
+
+        pagination_client_enabled: true
+        pagination_client_items_per_page: true
+        stateless: true
+        operations:
+                    - ApiPlatform\Metadata\Get
+                    - ApiPlatform\Metadata\GetCollection
+        cache_headers:
+            vary: ['Content-Type', 'Authorization', 'Origin']
